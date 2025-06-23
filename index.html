@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JBT - JavaScript Brain Teasers</title>
+    <!-- Chosen Palette: Warm Neutrals -->
+    <!-- Application Structure Plan: A single-page application with a fixed sidebar for topic navigation and a main content area. This structure allows users to easily jump between different JavaScript concepts without losing context. Each topic is presented as an interactive module where users can actively engage with "brain teaser" questions by clicking to reveal solutions and detailed explanations. This active learning approach is more effective for complex technical topics than passive reading. The structure is designed for focused learning, with interactive visualizations like charts and animations to demystify abstract concepts like Hoisting and the Event Loop. -->
+    <!-- Visualization & Content Choices: 
+        - Report Info: `var` vs `let` vs `const` comparison. Goal: Compare. Viz/Method: A Chart.js horizontal bar chart and a styled HTML table. Interaction: Hover tooltips on the chart. Justification: The chart provides a quick visual summary, while the table offers detailed information, catering to different learning preferences. Library: Chart.js.
+        - Report Info: Event Loop mechanism. Goal: Explain a process. Viz/Method: An animated diagram built with HTML/CSS. Interaction: A "Run Simulation" button triggers the animation, moving tasks between the Call Stack, Microtask Queue, and Macrotask Queue. Justification: Animating this complex process makes it tangible and far easier to understand than static text. Library: Vanilla JS + CSS animations.
+        - Report Info: Brain Teaser questions/answers. Goal: Inform and test understanding. Viz/Method: Interactive cards with code snippets and a "Reveal Solution" button. Interaction: Click-to-reveal. Justification: Encourages users to think critically before seeing the answer, reinforcing learning. Library: Vanilla JS.
+        - Report Info: Equality comparison table. Goal: Organize and Compare. Viz/Method: Interactive HTML table. Interaction: Filters to show specific results. Justification: Makes a large data table digestible and allows users to explore specific edge cases. Library: Vanilla JS.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link href="./main.css" rel="stylesheet" >
+</head>
+
+<body class="antialiased">
+    <div class="relative min-h-screen md:flex">
+        <!-- Mobile menu button -->
+        <div class="md:hidden flex justify-between items-center p-4 bg-white border-b">
+            <h1 class="text-xl font-bold text-gray-800">JS Brain Teasers</h1>
+            <button id="mobile-menu-button" class="text-gray-500 focus:outline-none focus:text-gray-600">
+                <svg class="h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Sidebar -->
+        <aside id="sidebar"
+            class="sidebar text-gray-700 w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out z-20">
+            <a href="#" class="text-gray-900 px-4 text-2xl font-bold flex items-center space-x-2">
+                <svg class="w-8 h-8 text-orange-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M14.25 6.087c0-.66.537-1.197 1.197-1.197h.006c.66 0 1.197.537 1.197 1.197v7.506c0 .66-.537 1.197-1.197 1.197h-.006c-.66 0-1.197-.537-1.197-1.197V6.087zM6.75 6.087c0-.66.537-1.197 1.197-1.197h.006c.66 0 1.197.537 1.197 1.197v7.506c0 .66-.537 1.197-1.197 1.197h-.006C7.287 14.79 6.75 14.253 6.75 13.593V6.087z" />
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 6A2.25 2.25 0 016 3.75h12A2.25 2.25 0 0120.25 6v12A2.25 2.25 0 0118 20.25H6A2.25 2.25 0 013.75 18V6z" />
+                </svg>
+                <span>JS Brain Teasers</span>
+            </a>
+            <nav id="nav-menu">
+            </nav>
+        </aside>
+
+        <!-- Main content -->
+        <main class="flex-1 p-4 sm:p-6 md:p-10">
+            <div id="content-container">
+            </div>
+        </main>
+    </div>
+    <script src="main.js" type="module"></script>
+</body>
+
+</html>
