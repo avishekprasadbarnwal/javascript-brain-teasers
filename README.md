@@ -1,1 +1,1 @@
-# javascript-brain-teasers
+# Javascript Brain Teasers
