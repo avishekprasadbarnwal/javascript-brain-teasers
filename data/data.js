@@ -223,5 +223,20 @@ export const data = {
                 explanation: "`Object.create(animal)` creates a new object (`dog`, `cat`) with `animal` as its `[[Prototype]]`. `dog.sound = 'woof'` creates an 'own' property on `dog` that shadows `animal.sound`. When `dog.makeSound()` is called, `this.sound` refers to `dog`'s own `sound`. `cat` does not have an 'own' `sound` property, so it looks up the prototype chain to `animal`, logging `generic sound`."
             }
         ]
+    },
+    sidequestions: {
+        title: "Brain Teasers - Side Questions",
+        intro: "While `setTimeout` returns a numeric ID in browsers, in Node.js, it returns a `Timeout` object. However, `console.log()` often displays this object's internal numeric ID for convenience.",
+        teasers: [
+            {
+                question: "Question 1: `setTimeout` return value",
+                code: `let timerFunc = setTimeout( (ing1, ing2) => {
+                          console.log(\`Pizza is made using \${ing1} \${ing2}\`);
+                        }, 2000, 'potato', 'tomato' );
+                        console.log(timerFunc);`,
+                solution: "Output (in Node.js, approximate):\n`10` (or any other increasing integer like 1, 2, 3... depending on previous timers)",
+                explanation: "In Node.js, `setTimeout` returns a special `Timeout` object, not directly a number. This `Timeout` object has internal properties, including a unique ID that Node.js uses to manage the timer. When `console.log()` prints this `Timeout` object, it often displays this internal numeric ID for convenience (e.g., `10`, `11`, etc.). This ID is what you would pass to `clearTimeout()` to cancel the specific timer, even though the return value itself is an object."
+            }
+        ]
     }
 };
