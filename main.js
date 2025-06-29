@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
         'closures': 'Closures & Scope',
         'async': 'Async & Event Loop',
         'equality': 'Equality & Coercion',
-        'prototypes': 'Prototypal Inheritance'
+        'prototypes': 'Prototypal Inheritance',
+        'sidequestions': 'Brain Teasers - Side Questions',
     };
 
     // Populate navigation
